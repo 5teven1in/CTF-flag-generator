@@ -1,5 +1,7 @@
 # Flag Generator
 
+A CTF leet flag generator
+
 ## Usage
 
 To translate alpha characters to leet string:
