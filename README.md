@@ -1,4 +1,4 @@
-# Flag Generator
+# CTF Flag Generator
 
 A CTF leet flag generator
 
