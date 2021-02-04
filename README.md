@@ -6,8 +6,13 @@ A CTF leet flag generator
 
 To translate alpha characters to leet string:
 
-`genflag.py 'this_is_your_flag'`
+```
+./genflag.py 'this_is_your_flag'
+````
 
 And output maybe:
 
-`TH1$_15_y0Ur_fl@6`
+```
+TH1S_i5_yOUr_fL@6
+Added entropy: 8.75 bits
+```
