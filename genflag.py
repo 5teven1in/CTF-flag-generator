@@ -3,6 +3,7 @@
 
 import argparse
 import random
+import math
 
 char_map = [
         ['A', 'a', '4', '@'],
@@ -37,18 +38,22 @@ def change(c):
     if c.isalpha():
         c = c.upper()
         char_set = char_map[ord(c) - ord('A')]
-        return char_set[random.randint(0, len(char_set) - 1)]
+        return char_set[random.randint(0, len(char_set) - 1)], math.log2(len(char_set))
     else:
-        return c
+        return c, 0
 
 def main():
     global args
     parser = argparse.ArgumentParser()
     parser.add_argument("string", help = "origin flag string")
     args = parser.parse_args()
+    entropy = 0
     for c in args.string:
-        print(change(c), end = '')
+        new_c, e = change(c)
+        print(new_c, end = '')
+        entropy += e
     print()
+    print(f"Added entropy: {entropy:.2f} bits")
 
 if __name__ == "__main__":
     main()
