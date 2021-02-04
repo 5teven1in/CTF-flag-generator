@@ -38,7 +38,8 @@ def change(c):
     if c.isalpha():
         c = c.upper()
         char_set = char_map[ord(c) - ord('A')]
-        return char_set[random.randint(0, len(char_set) - 1)], math.log2(len(char_set))
+        new_c = char_set[random.randint(0, len(char_set) - 1)]
+        return new_c, (c == new_c) * math.log2(len(char_set))
     else:
         return c, 0
 
